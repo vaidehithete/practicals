@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment 8</title>
+</head>
+<style>
+    #divID1 {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 25%;
+        background-color: #555;
+    }
+
+    #divID2 {
+        position: absolute;
+        top: 60%;
+        left: 25%;
+        width: 50%;
+        height: 25%;
+        background-color: #555;
+    }
+
+    #hd1 {
+        position: absolute;
+        left: 25%;
+        top: 18%;
+    }
+
+    #hd2 {
+        position: absolute;
+        left: 25%;
+        top: 54%;
+    }
+</style>
+
+<body>
+    <h3>Name: Shubhranshu Gupta</h3>
+    <h3>Roll No.: 42130</h3>
+
+    <h3 id="hd1">Mouse Over: </h3>
+    <div class="rectangle" id="divID1" onmouseover="changeBackground('divID1')"></div>
+
+    <h3 id="hd2">Mouse Focus: </h3>
+    <input class="rectangle" id="divID2" onfocus="changeBackground('divID2')"></input>
+
+    <script>
+        function randomcolor() {
+            return Math.floor(Math.random() * 255);
+        }
+        
+        function changeBackground(tag){
+            const divElem = document.getElementById(tag);
+            divElem.style.backgroundColor = 'rgba('
+                + randomcolor() + ',' + randomcolor()
+                + ',' + randomcolor() + '\)'
+        }
+    </script>
+</body>
+
+</html>

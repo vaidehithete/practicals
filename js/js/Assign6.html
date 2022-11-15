@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Assignment 6</title>
+    </head>
+    <body>
+        <h2>
+            Name: Vaibhav Thete <br>
+            Roll No: 42130 <br>
+        </h2>
+        <table>
+            <tr>
+                <td>Enter Array Length</td>
+                <td><input type="text" name="length" /></td>
+                <td><button onclick="showArray()">Show Array</button></td>
+            </tr>
+            <tr>
+                <td>Enter Element to be deleted</td>
+                <td><input type="text" name="delete" /></td>
+                <td><button onclick="remove()">Show Array</button></td>
+            </tr>
+            <tr>
+                <td>Enter Element to be searched</td>
+                <td><input type="text" name="search" /></td>
+                <td><button onclick="search()">Show Array</button></td>
+            </tr>
+        </table>
+        <p id="output">
+        </p>
+    </body>
+
+    <script>
+        var arr;
+
+        function showArray() {
+            var length = document.getElementsByName("length")[0].value;
+            var array = new Array(length);
+            var output = document.getElementById("output");
+            output.innerHTML = "Array: ";
+            for (var i = 0; i < length; i++) {
+                array[i] = i + 1;
+                output.innerHTML += array[i] + " ";
+            }
+            arr=array;
+        }
+
+        // To remove specific element from the array
+        function remove(){
+            var deleteElement = document.getElementsByName("delete")[0].value;
+            var output = document.getElementById("output");
+            output.innerHTML = "Array: ";
+            for (var i = 0; i < arr.length; i++) {
+                if(arr[i] == deleteElement){
+                    arr.splice(i,1);
+                }
+                output.innerHTML += arr[i] + " ";
+            }
+        }
+
+        // Check if an array contains a specified value.
+        function search(){
+            var isFound=false;
+            var searchElement = document.getElementsByName("search")[0].value;
+            var output = document.getElementById("output");
+            output.innerHTML = "Array: ";
+            for (var i = 0; i < arr.length; i++) {
+                output.innerHTML += arr[i] + " ";
+                if(arr[i] == searchElement)
+                    isFound=true;
+            }
+
+            if(!isFound){
+                output.innerHTML += "<br>Element Not Found";
+            }else{
+                output.innerHTML += "<br>Element Found";
+            }
+        }
+    </script>
+
+</html>

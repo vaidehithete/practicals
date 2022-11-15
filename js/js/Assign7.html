@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Assignment 7</title>
+    </head>
+    <body>
+        <h2>
+            Name: Shubhranshu Gupta <br>
+            Roll No: 42130 <br>
+        </h2>
+        <p>Enter Object: </p>
+        <input type="text" name="length" />
+        <button onclick="addObj()">Add Object</button>
+        
+        <p>Enter Element to be searched</p>
+        <input type="text" name="search" />
+        <button onclick="search()">Search</button>
+                
+        <p id="output"></p>
+    </body>
+
+    <script>
+        var arr=Array();
+
+        function addObj() {
+            var obj = document.getElementsByName("length")[0].value;
+            var output = document.getElementById("output");
+            output.innerHTML = "Object: ";
+            output.innerHTML += obj;
+            output.innerHTML += " Added";
+            arr.push(obj);
+        }
+
+        function search(){
+            var searchElement = document.getElementsByName("search")[0].value;
+            var output = document.getElementById("output");
+            output.innerHTML = "Object: ";
+            if(arr.find(element => element == searchElement)){
+                output.innerHTML += "Object Found";
+            }
+            else{
+                output.innerHTML += "Object Not Found";
+            }
+        }
+    </script>
+
+</html>

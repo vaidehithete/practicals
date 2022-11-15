@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h3>Name: Shubhranshu Gupta</h3>
+    <h3>Roll No.: 42130</h3>
+    
+    <form action="#" name="StudentRegistration" onsubmit="return(validate());">
+        <p>Name</p>
+        <input type=text name=textnames id="textname" size="30" required>
+        <br>
+        <p>EmailId</p>
+        <input type="email" name="emailid" id="emailid" size="30" required>
+        <br>
+        <p>Mobile No</p>
+        <input type="tel" name="mobileno" id="mobileno" size="30" pattern="[0-9]{10}" required>
+        <br>
+        <p>Gender</p>
+        <select name="gender" id="gender" style="width: 237px;">
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+        </select>
+        <br>
+        <p>City</p>
+        <input type="text" name="city" id="city" size="30" required>
+        <br>
+        <p>State</p>
+        <input type="text" name="state" id="state" size="30" required>
+        <br>
+        <input type="reset">
+        <input type="submit" value="Submit Form" />            
+    </form>
+</body>
+
+</html>
