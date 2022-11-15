@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Area Of Shapes</title>
+</head>
+
+<body style="text-align: center;">
+    <h3>Name: Shubhranshu Gupta</h3>
+    <h3>Roll No.: 42130</h3>
+
+    <h3>Area of Triangle</h3>
+
+    <label for="side1">Enter the value of side 1:</label>
+    <input type="number" id="side1" placeholder="Side 1 Value">
+    <br><br>
+
+    <label for="side2">Enter the value of side 2:</label>
+    <input type="number" id="side2" placeholder="Side 2 Value">
+    <br><br>
+
+    <label for="side3">Enter the value of side 3:</label>
+    <input type="number" id="side3" placeholder="Side 3 Value">
+    <br><br><br>
+
+    <button onclick="TArea()">Calculate</button><br><br>
+
+
+    <h3>Area of Circle</h3><br>
+    <label for="rad">Enter the value of radius:</label>
+    <input type="number" id="rad" placeholder="Enter radius">
+    <br><br><br>
+
+    <button onclick="CArea()">Calculate</button><br><br>
+
+
+    <h3>Area of Rectangle</h3><br>
+    <label for="len">Enter the value of length:</label>
+    <input type="number" id="len" placeholder="Enter the length">
+    <br><br>
+
+    <label for="br">Enter the value of breadth:</label>
+    <input type="number" id="br" placeholder="Enter the breadth">
+    <br><br><br>
+
+    <button onclick="RArea()">Calculate</button><br><br>
+
+    <p id="display">Area: </p>
+
+    <script>
+        function TArea() {
+            var side1 = parseInt(document.getElementById("side1").value);
+            var side2 = parseInt(document.getElementById("side2").value);
+            var side3 = parseInt(document.getElementById("side3").value);
+
+            console.log(typeof (side1));
+            var s = (side1 + side2 + side3) / 2;
+            var area = Math.sqrt(s * ((s - side1) * (s - side2) * (s - side3)));
+            document.getElementById("display").innerHTML+=area;
+        }
+
+        function CArea() {
+            var rad = parseInt(document.getElementById("rad").value);
+            console.log(typeof (rad));
+            var carea = (3.14 * rad * rad);
+            document.getElementById("display").innerHTML+=carea;
+        }
+
+        function RArea() {
+            var len = parseInt(document.getElementById("len").value);
+            var br = parseInt(document.getElementById("br").value);
+
+            console.log(typeof (len));
+            var rarea = (len * br);
+            document.getElementById("display").innerHTML+=rarea;
+        }
+    </script>
+</body>
+
+</html>
